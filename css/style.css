@@ -70,3 +70,22 @@ head1 {
 .centered {
   text-align: center;
 }
+
+spacer15 {
+  height: 30px
+}
+
+spacer30 {
+  height: 30px
+}
+
+spacer50 {
+  height: 59px
+}
+
+divider {
+  width: 100%;
+  height: 2px;
+  background-color: #444;
+  margin: 15px 0;
+}
