@@ -21,16 +21,20 @@ head1 {
 
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
 
+.topnav a:visited {
+  color: white;
+}
+
 .topnav a:hover {
+  color: blue;
   background-color: #ddd;
-  color: black;
 }
 
 .topnav a.active {
