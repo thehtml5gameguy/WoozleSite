@@ -1,3 +1,5 @@
+let internalHashUpdate = false;
+
 function openPage(pageName) {
     document.querySelectorAll('.page').forEach(page => {
         page.style.display = "none";
@@ -12,9 +14,11 @@ function openPage(pageName) {
         activePage.style.display = "block";
     }
 
-    document.querySelector(`.tablink[data-page="${pageName}"]`)?.classList.add("active");
-
+    internalHashUpdate = true;
     window.location.hash = pageName;
+    internalHashUpdate = false;
+
+    document.querySelector(`.tablink[data-page="${pageName}"]`)?.classList.add("active");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -26,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    let pageFromHash = window.location.hash.replace("#", "");
+    const pageFromHash = window.location.hash.replace("#", "");
 
     if (pageFromHash && document.getElementById(pageFromHash)) {
         openPage(pageFromHash);
@@ -36,5 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("hashchange", () => {
-    location.reload();
+    if (!internalHashUpdate) {
+        location.reload();
+    }
 });
