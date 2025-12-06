@@ -4,45 +4,40 @@
   <title>Woozle</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .page {
-      display: none;
-    }
-    .page.active {
-      display: block;
-    }
-  </style>
 </head>
 
 <body>
 
   <div class="topnav">
-    <a href="#" onclick="showPage('home')">Home</a>
-    <a href="#" onclick="showPage('download')">Download</a>
-    <a href="#" onclick="showPage('games')">Games</a>
-  </div> 
-
-  <div id="home" class="page active">
-    <h1>Welcome to Woozle</h1>
-    <p>This is the home page.</p>
+    <a class="tablink active" onclick="openPage('home', this)">Home</a>
+    <a class="tablink" onclick="openPage('download', this)">Download</a>
+    <a class="tablink" onclick="openPage('games', this)">Games</a>
   </div>
   
-  <div id="download" class="page">
+  <div id="home" class="page">
+    <h1>Welcome to Woozle</h1>
+    <p>This is the Home page.</p>
+  </div>
+
+  <div id="download" class="page" style="display:none;">
     <h1>Download</h1>
     <p>Download stuff here.</p>
   </div>
 
-  <div id="games" class="page">
+  <div id="games" class="page" style="display:none;">
     <h1>Games</h1>
-    <p>Here are some games.</p>
+    <p>Your games go here.</p>
   </div>
 
   <script>
-    function showPage(pageId) {
+    function openPage(pageName, element) {
+      document.querySelectorAll('.page').forEach(p => p.style.display = "none");
 
-      document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+      document.querySelectorAll('.tablink').forEach(a => a.classList.remove("active"));
 
-      document.getElementById(pageId).classList.add("active");
+      document.getElementById(pageName).style.display = "block";
+
+      element.classList.add("active");
     }
   </script>
 
