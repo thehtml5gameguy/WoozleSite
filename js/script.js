@@ -22,6 +22,16 @@ function openPage(pageName) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash && document.getElementById(hash)) {
+        openPage(hash);
+    } else {
+        openPage("home");
+    }
+
+    document.body.classList.add("ready");
+    document.body.style.visibility = "visible";
+    
     document.querySelectorAll('.tablink').forEach(tab => {
         tab.addEventListener('click', e => {
             e.preventDefault();
