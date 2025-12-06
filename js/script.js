@@ -22,16 +22,15 @@ function openPage(pageName) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-
     document.querySelectorAll('.tablink').forEach(tab => {
-        tab.addEventListener('click', () => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
             const page = tab.dataset.page;
             openPage(page);
         });
     });
 
     const pageFromHash = window.location.hash.replace("#", "");
-
     if (pageFromHash && document.getElementById(pageFromHash)) {
         openPage(pageFromHash);
     } else {
