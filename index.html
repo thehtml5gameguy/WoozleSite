@@ -4,32 +4,47 @@
   <title>Woozle</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page {
+      display: none;
+    }
+    .page.active {
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
 
   <div class="topnav">
-    <a class="active" href="#home">Home</a>
-    <a href="#news">Download</a>
-    <a href="#about">Games</a>
+    <a href="#" onclick="showPage('home')">Home</a>
+    <a href="#" onclick="showPage('download')">Download</a>
+    <a href="#" onclick="showPage('games')">Games</a>
   </div> 
 
-  <section id="home">
+  <div id="home" class="page active">
     <h1>Welcome to Woozle</h1>
-    <p>Home page</p>
-  </section>
+    <p>This is the home page.</p>
+  </div>
+  
+  <div id="download" class="page">
+    <h1>Download</h1>
+    <p>Download stuff here.</p>
+  </div>
 
-  <section id="news">
-    <h1>Download Woozle</h1>
-    <p>
-      Download:
-    </p>
-  </section>
-
-  <section id="about">
+  <div id="games" class="page">
     <h1>Games</h1>
-    <p>Games</p>
-  </section>
+    <p>Here are some games.</p>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+
+      document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+
+      document.getElementById(pageId).classList.add("active");
+    }
+  </script>
 
 </body>
 </html>
