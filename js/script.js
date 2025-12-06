@@ -2,7 +2,7 @@ let internalHashUpdate = false;
 
 function openPage(pageName) {
     document.querySelectorAll('.page').forEach(page => {
-        page.classList.remove("activePage");
+        page.style.display = "none";
     });
 
     document.querySelectorAll('.tablink').forEach(tab => {
@@ -10,7 +10,7 @@ function openPage(pageName) {
     });
 
     const activePage = document.getElementById(pageName);
-    if (activePage) activePage.classList.add("activePage");
+    if (activePage) activePage.style.display = "block";
 
     internalHashUpdate = true;
     window.location.hash = pageName;
@@ -22,16 +22,6 @@ function openPage(pageName) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const hash = window.location.hash.replace("#", "");
-    if (hash && document.getElementById(hash)) {
-        openPage(hash);
-    } else {
-        openPage("home");
-    }
-
-    document.body.classList.add("ready");
-    document.body.style.visibility = "visible";
-    
     document.querySelectorAll('.tablink').forEach(tab => {
         tab.addEventListener('click', e => {
             e.preventDefault();
