@@ -10,36 +10,42 @@ function openPage(pageName) {
     });
 
     const activePage = document.getElementById(pageName);
-    if (activePage) {
-        activePage.style.display = "block";
-    }
+    if (activePage) activePage.style.display = "block";
 
     internalHashUpdate = true;
     window.location.hash = pageName;
     internalHashUpdate = false;
 
-    document.querySelector(`.tablink[data-page="${pageName}"]`)?.classList.add("active");
+    document
+        .querySelector(`.tablink[data-page="${pageName}"]`)
+        ?.classList.add("active");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.tablink').forEach(tab => {
-        tab.addEventListener('click', (e) => {
+        tab.addEventListener('click', e => {
             e.preventDefault();
             const page = tab.dataset.page;
             openPage(page);
         });
     });
 
-    const pageFromHash = window.location.hash.replace("#", "");
-    if (pageFromHash && document.getElementById(pageFromHash)) {
-        openPage(pageFromHash);
+    const hash = window.location.hash.replace("#", "");
+
+    if (hash && document.getElementById(hash)) {
+        openPage(hash);
     } else {
         openPage("home");
     }
 });
 
 window.addEventListener("hashchange", () => {
-    if (!internalHashUpdate) {
-        location.reload();
+    if (!internalHashUpdate) location.reload();
+});
+
+window.addEventListener("pageshow", e => {
+    if (e.persisted) {
+        const page = window.location.hash.replace("#", "");
+        if (page) openPage(page);
     }
 });
