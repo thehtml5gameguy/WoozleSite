@@ -2,7 +2,7 @@ let internalHashUpdate = false;
 
 function openPage(pageName) {
     document.querySelectorAll('.page').forEach(page => {
-        page.style.display = "none";
+        page.classList.remove("activePage");
     });
 
     document.querySelectorAll('.tablink').forEach(tab => {
@@ -10,7 +10,7 @@ function openPage(pageName) {
     });
 
     const activePage = document.getElementById(pageName);
-    if (activePage) activePage.style.display = "block";
+    if (activePage) activePage.classList.add("activePage");
 
     internalHashUpdate = true;
     window.location.hash = pageName;
