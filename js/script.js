@@ -34,3 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         openPage("home");
     }
 });
+
+window.addEventListener("hashchange", () => {
+    location.reload();
+});
