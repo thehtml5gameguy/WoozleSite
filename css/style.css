@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
+
 body {
   background: #000;
   color: #fff;
   padding: 25px;
   font-size: 15px;
-  font-family: sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 head1 {
@@ -11,21 +13,22 @@ head1 {
   color: #fff;
   font-size: 35px;
   padding: 25px;
-  font-family: sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .noselect {
   -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .topnav {
   background-color: #333;
   overflow: hidden;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .topnav a {
@@ -35,6 +38,7 @@ head1 {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .topnav a:hover {
@@ -49,6 +53,7 @@ head1 {
 
 .page {
   padding: 20px;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .button {
@@ -61,6 +66,7 @@ head1 {
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .glowingText {
@@ -72,15 +78,18 @@ head1 {
 }
 
 spacer15 {
-  height: 30px
+  height: 30px;
+  display: block;
 }
 
 spacer30 {
-  height: 30px
+  height: 30px;
+  display: block;
 }
 
 spacer50 {
-  height: 59px
+  height: 59px;
+  display: block;
 }
 
 divider {
@@ -88,4 +97,5 @@ divider {
   height: 2px;
   background-color: #8a8a8a;
   margin: 15px 0;
+  display: block;
 }
