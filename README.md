@@ -1,2 +1,3 @@
 # The Woozle website
-Website for WoozleAccess [Here](https://SoftlocksStudios.github.io/WoozleSite)
+Website for Woozle
+Access [Here](https://SoftlocksStudios.github.io/WoozleSite)
