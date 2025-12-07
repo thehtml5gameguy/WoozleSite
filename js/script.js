@@ -32,14 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         openPage("home");
     }
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  const vid = document.querySelector("video");
-  if (vid) {
-    vid.muted = true;  
-    vid.play().catch(() => {});
-  }
+    const vid = document.querySelector("video");
+      if (vid) {
+        vid.muted = true;  
+        vid.play().catch(() => {});
+      }
 });
 
 window.addEventListener("hashchange", () => {
